@@ -51,30 +51,32 @@
   };
 </script>
 
-  <meta name="description" content="web🐶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guest&#39;s Blog">
-<meta property="og:url" content="https:&#x2F;&#x2F;qwertyisme.github.io&#x2F;index.html">
+  <meta name="description" content="数据结构导论数据结构的定义 数据：数据就是数值，也就是我们通过观察、实验或计算得出的结果。数据有很多种，最简单的就是数字。数据也可以是文字、图像、声音等。数据可以用于科学研究、设计、查证等。 数据结构：数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构笔记整理📝">
+<meta property="og:url" content="https:&#x2F;&#x2F;qwertyisme.github.io&#x2F;2019&#x2F;12&#x2F;20&#x2F;DataStructure2&#x2F;index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
-<meta property="og:description" content="web🐶">
+<meta property="og:description" content="数据结构导论数据结构的定义 数据：数据就是数值，也就是我们通过观察、实验或计算得出的结果。数据有很多种，最简单的就是数字。数据也可以是文字、图像、声音等。数据可以用于科学研究、设计、查证等。 数据结构：数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-20T11:54:05.837Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://qwertyisme.github.io/">
+<link rel="canonical" href="https://qwertyisme.github.io/2019/12/20/DataStructure2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Guest's Blog</title>
+  <title>数据结构笔记整理📝 | Guest's Blog</title>
   
 
 
@@ -188,10 +190,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/12/20/DataStructure2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -205,8 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/20/DataStructure2/" class="post-title-link" itemprop="url">数据结构笔记整理📝</a>
+          数据结构笔记整理📝
         </h1>
 
         <div class="post-meta">
@@ -242,7 +243,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h2><h4 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h4><ul>
+        <h2 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h2><h4 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h4><ul>
 <li>数据：数据就是数值，也就是我们通过观察、实验或计算得出的结果。数据有很多种，最简单的就是数字。数据也可以是文字、图像、声音等。数据可以用于科学研究、设计、查证等。</li>
 <li>数据结构：数据结构是<strong>计算机存储、组织数据的方式</strong>。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</li>
 <li>数据结构 = 数据 + <strong>关系</strong></li>
@@ -336,425 +337,40 @@
 <h4 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">SeqStudentListByArray</span>* <span class="title">g_studentListMgr</span>;</span> <span class="comment">//假设顺序表已经完成初始化</span></span><br><span class="line"><span class="function">Boolean <span class="title">push</span><span class="params">(struct Student value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> insert(value , g_studentListMgr-&gt;count+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Boolean <span class="title">pop</span><span class="params">(struct Student&amp; value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">get</span>(g_studentListMgr-&gt;count , value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> FALSE;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove</span>(g_studentListMgr-&gt;count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/12/11/academiccommunication/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/11/academiccommunication/" class="post-title-link" itemprop="url">学术交流英语笔记📝</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-11 17:47:39 / Modified: 18:38:17" itemprop="dateCreated datePublished" datetime="2019-12-11T17:47:39+08:00">2019-12-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>转眼间也上了一学期的学术交流英语了，开始选这门课完全是因为学长学姐说这门课水，结果一学期下来虽然没怎么花时间，上课也没怎么听，但是认认真真做了慕课。感觉学到了许多有用的东西，在这里做一个总结。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/11/academiccommunication/#more" rel="contents">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/11/academiccommunication/" rel="next" title="学术交流英语笔记📝">
+                  <i class="fa fa-chevron-left"></i> 学术交流英语笔记📝
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+            <span class="post-nav-divider"></span>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/12/08/modify/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/08/modify/" class="post-title-link" itemprop="url">第一次修改博客配置🎈</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-08 02:44:03 / Modified: 03:01:42" itemprop="dateCreated datePublished" datetime="2019-12-08T02:44:03+08:00">2019-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>由于之前安装的next版本是最新的7.5，很多地方比起5.0发生了蛮大的变化，主要是字体变大以及文章内容框变宽导致看得很不习惯，于是自己开始谷歌并修改配置文件。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/08/modify/#more" rel="contents">
-                Read more &raquo;
-              </a>
+            <div class="post-nav-prev post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/12/06/DataStructure1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/06/DataStructure1/" class="post-title-link" itemprop="url">关于数据结构的一点浅薄的感悟💡</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-12-06 09:24:57" itemprop="dateCreated datePublished" datetime="2019-12-06T09:24:57+08:00">2019-12-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-08 10:16:40" itemprop="dateModified" datetime="2019-12-08T10:16:40+08:00">2019-12-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>数据结构课也算是一学期快要上完了，尽管凯哥吹了一学期的牛，似乎并没有讲什么数据结构方面具体的知识，但我感觉一学期下来收获良多。可能是因为凯哥讲课比较注重方法论，许多具体的点，尽管不细讲，但他会跟我们讲明白原理，讲一些计算机的底层的架构，我觉得这些对我思想方面的提升是巨大的。我觉得数据结构这门课在凯哥的引导以及自学下慢慢领悟到了一些思想了。有的时候看凯哥其实更像一个计组老师，我很感激他。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/06/DataStructure1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/11/09/buildblog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/buildblog/" class="post-title-link" itemprop="url">搭建hexo博客踩的无数坑🤦‍♂️</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-09 12:05:17" itemprop="dateCreated datePublished" datetime="2019-11-09T12:05:17+08:00">2019-11-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-08 03:01:08" itemprop="dateModified" datetime="2019-12-08T03:01:08+08:00">2019-12-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>昨天折腾一晚上总算是把hexo的博客搭出来了，由于同之前的hugo差异很大，在这过程中踩了无数坑。</p>
-<p>首先是next的版本，原先在next作者issnan的网站上下载的next是5.1.4版本的，结果运行的过程中控制台一直发提醒，才发现next官方的github上已经是7.0.0版本了，因此又重新下载了一次。</p>
-<p>接着是本地调试，本地调试很顺利，几乎没有遇到什么坑。</p>
-<p>为了修改自己的配置，打开_config.yml开始改参数。</p>
-<h5 id="顺着文档一条一条来，不懂的看别人博客、看注释。"><a href="#顺着文档一条一条来，不懂的看别人博客、看注释。" class="headerlink" title="顺着文档一条一条来，不懂的看别人博客、看注释。"></a>顺着文档一条一条来，不懂的看别人博客、看注释。</h5>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/09/buildblog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qwertyisme.github.io/2019/11/07/welcome/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/07/welcome/" class="post-title-link" itemprop="url">Welcome to my blog! 😜</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-07 21:41:10" itemprop="dateCreated datePublished" datetime="2019-11-07T21:41:10+08:00">2019-11-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-08 20:16:29" itemprop="dateModified" datetime="2019-11-08T20:16:29+08:00">2019-11-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎来到我的博客 : )</p>
-<p>原来的博客由于github账号修改username而挂了，原先的博客是用的hugo生成的。本来想迁移过来的，后来发现hexo上的next主题很是讨喜，于是又重新搭了这个博客。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -783,6 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构导论"><span class="nav-number">1.</span> <span class="nav-text">数据结构导论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据结构的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性结构与非线性结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">线性结构与非线性结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-线性表"><span class="nav-number">2.</span> <span class="nav-text">List 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构特点"><span class="nav-number">2.0.1.</span> <span class="nav-text">结构特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">2.0.2.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连续映射"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">连续映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#离散映射"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">离散映射</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表："><span class="nav-number">2.0.3.</span> <span class="nav-text">线性表：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现在线性表中插入元素："><span class="nav-number">2.0.3.1.</span> <span class="nav-text">实现在线性表中插入元素：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove的实现方法同理："><span class="nav-number">2.0.3.2.</span> <span class="nav-text">remove的实现方法同理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性表总结："><span class="nav-number">2.0.3.3.</span> <span class="nav-text">线性表总结：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表："><span class="nav-number">2.0.4.</span> <span class="nav-text">链表：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack栈"><span class="nav-number">3.</span> <span class="nav-text">Stack栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的定义"><span class="nav-number">3.0.1.</span> <span class="nav-text">栈的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊之处"><span class="nav-number">3.0.2.</span> <span class="nav-text">特殊之处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的层次化架构"><span class="nav-number">3.0.3.</span> <span class="nav-text">栈的层次化架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的实现"><span class="nav-number">3.0.4.</span> <span class="nav-text">栈的实现</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
