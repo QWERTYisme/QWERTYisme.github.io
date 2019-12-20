@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-12-20 19:50:19 / Modified: 19:54:05" itemprop="dateCreated datePublished" datetime="2019-12-20T19:50:19+08:00">2019-12-20</time>
+              <time title="Created: 2019-12-20 19:50:19 / Modified: 20:11:05" itemprop="dateCreated datePublished" datetime="2019-12-20T19:50:19+08:00">2019-12-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,100 +242,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h2><h4 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h4><ul>
-<li>数据：数据就是数值，也就是我们通过观察、实验或计算得出的结果。数据有很多种，最简单的就是数字。数据也可以是文字、图像、声音等。数据可以用于科学研究、设计、查证等。</li>
-<li>数据结构：数据结构是<strong>计算机存储、组织数据的方式</strong>。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</li>
-<li>数据结构 = 数据 + <strong>关系</strong></li>
-</ul>
-<h4 id="线性结构与非线性结构"><a href="#线性结构与非线性结构" class="headerlink" title="线性结构与非线性结构"></a>线性结构与非线性结构</h4><ul>
-<li>线性结构：线性表、队列、栈、串、数组等。</li>
-<li>非线性结构：树、表、图，以及混合结构。</li>
-<li>线性结构对应：结构更简单，功能更基础，维护更简单。</li>
-<li>非线性结构对应：结构更复杂，功能更强到，维护更困难。</li>
-</ul>
-<h2 id="List-线性表"><a href="#List-线性表" class="headerlink" title="List 线性表"></a>List 线性表</h2><h4 id="结构特点"><a href="#结构特点" class="headerlink" title="结构特点"></a>结构特点</h4><ul>
-<li><p><strong>全序关系</strong>，每一个元素都具有唯一的前驱和后继</p>
-</li>
-<li><p><strong>严格同构</strong>，任何两个组成部分之间具有相同结构</p>
-</li>
-</ul>
-<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><h5 id="连续映射"><a href="#连续映射" class="headerlink" title="连续映射"></a>连续映射</h5><ul>
-<li><p>连续映射：所有元素依据此许映射为连续而完整的物s理空间，称为<strong>顺序表</strong>。</p>
-</li>
-<li><p>优势：借助物理空间的连续性确保全序关系，管理简单，访问速度快。</p>
-</li>
-<li><p>劣势：连续空间难以预先准确规划，造成浪费或者无法扩展。</p>
-</li>
-<li><p>一个好的习惯：初始化.</p>
-<p>动态创建字符数组：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *myBuffer=(<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="number">0x1f</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="离散映射"><a href="#离散映射" class="headerlink" title="离散映射"></a>离散映射</h5><ul>
-<li><p>离散映射：各个元素映射到离散的物理空间并通过结构信息维护全序关系，称为<strong>链表</strong>。</p>
-</li>
-<li><p>优势：不依赖物理空间的连续性，分散存储，充分利用存储空间，具有良好可扩展性。</p>
-</li>
-<li><p>劣势：需要额外信息维护结构，逻辑较为复杂，动态分配内存造成额外时间消耗。</p>
-</li>
-</ul>
-<h4 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h4><h5 id="实现在线性表中插入元素："><a href="#实现在线性表中插入元素：" class="headerlink" title="实现在线性表中插入元素："></a>实现在线性表中插入元素：</h5><ul>
-<li><p>通常的写法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Bool <span class="title">insert</span><span class="params">(struct Student value , <span class="keyword">int</span> index)</span> <span class="comment">//index从1开始</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos;</span><br><span class="line">    <span class="keyword">if</span> (index&gt; g_studentListMgr-&gt;count+<span class="number">1</span> || g_studentListMgr-&gt;count == MAX_List_length) <span class="keyword">return</span> FALSE;</span><br><span class="line">    <span class="keyword">for</span>(pos = g_studentListMgr-&gt;count<span class="number">-1</span>;pos&gt;=index<span class="number">-1</span>;pos--) </span><br><span class="line">    &#123;</span><br><span class="line">        g_studentListMgr.students[pos+<span class="number">1</span>] = g_studentListMgr.students[pos]; </span><br><span class="line">    &#125;</span><br><span class="line">    g_studentListMgr.students[index<span class="number">-1</span>] = value;</span><br><span class="line">    g_studentListMgr-&gt;count+=<span class="number">1</span>；</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Insert的实现分析：</p>
-<ul>
-<li>最好情况：插入的位置在线性表尾部，时间复杂度为O(1)</li>
-<li>最差情况：插入的位置在线性表头部，时间复杂度为O(n)</li>
-<li>平均情况：各个位置都是等概率插入，时间复杂度为O(n/2)</li>
-</ul>
-</li>
-<li><p>一种高效的在线性表中插入元素的方法：memmove函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memmove</span><span class="params">( <span class="keyword">void</span>* dest, <span class="keyword">const</span> <span class="keyword">void</span>* src, size_tcount )</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>由src所指内存区域复制count个字节到dest所指内存区域。</p>
-<p>src和dest所指内存区域可以重叠，但复制后dest内容会被更改。函数返回指向dest的指针。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memmove(g_studentListMgr.students+index , g_studentListMgr.students+index<span class="number">-1</span> , g_studentListMgr-&gt;count - index);</span><br><span class="line">g_studentListMgr.students[index<span class="number">-1</span>] = value;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h5 id="remove的实现方法同理："><a href="#remove的实现方法同理：" class="headerlink" title="remove的实现方法同理："></a>remove的实现方法同理：</h5><ul>
-<li><p>使用memmove函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memmove(g_studentListMgr.students+index<span class="number">-1</span> , g_studentListMgr.students+index , g_studentListMgr-&gt;count - index);</span><br><span class="line">g_studentListMgr.students[count] = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="线性表总结："><a href="#线性表总结：" class="headerlink" title="线性表总结："></a>线性表总结：</h5><ul>
-<li>存储空间静态分配，难以动态扩充</li>
-<li>数据插入需要进行数据移动，代价O(n)较高</li>
-<li>数据删除需要进行数据移动，代价O(n)较高</li>
-<li>数据查找需要进行全表遍历，代价O(n)较高</li>
-<li>按位置（下标）可直接获取，代价O(1)极低</li>
-</ul>
-<h4 id="链表："><a href="#链表：" class="headerlink" title="链表："></a>链表：</h4><ul>
-<li><p>一个好的习惯：初始化，</p>
-<p>创建链表：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UniDirectStudentList</span> <span class="title">g_studentListMgr</span>;</span></span><br><span class="line"><span class="function">Boolean <span class="title">Initialize</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    g_studentListMgr.head = <span class="literal">NULL</span>;</span><br><span class="line">    g_studentListMgr.count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入和删除部分比较简单，不再赘述。</p>
-</li>
-<li><p>get和locate也比较简单，同样不再赘述。</p>
-</li>
-<li><p>链表的合并：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Void <span class="title">union</span><span class="params">(struct UniDirectStudentList* list1,struct UniDirectStudentList* list2)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Student</span> *<span class="title">tmpPtr</span> , *<span class="title">tmpNode1</span>, *<span class="title">tmpNode2</span> = <span class="title">list2</span>-&gt;<span class="title">head</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(tmpNode2!=<span class="literal">NULL</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        tmpNode1 = list1-&gt;head;</span><br><span class="line">        <span class="keyword">while</span>(tmpNode1!=<span class="literal">NULL</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(tmpNode1-&gt;id , tmpNode2-&gt;id)) </span><br><span class="line">            &#123;</span><br><span class="line">                tmpPtr = tmpNode2;</span><br><span class="line">                tmpNode2 = tmpNode2-&gt;nextAddr;</span><br><span class="line">                <span class="built_in">free</span>(tmpPtr);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; tmpNode1 = tmpNode1-&gt;nextAddr; &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span>(tmpNode1 == <span class="literal">NULL</span>) 		<span class="comment">//若链表一中没有该元素，则将该元素添加到链表一头部。</span></span><br><span class="line">        &#123; </span><br><span class="line">             tmpPtr = tmpNode2; </span><br><span class="line">             tmpNode2 = tmpNode2-&gt;nextAddr;</span><br><span class="line">             tmpPtr-&gt;nextAddr = list1-&gt;head;</span><br><span class="line">             list1-&gt;head = tmpPtr;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>循环链表的应用：CPU进程调度。</p>
-</li>
-</ul>
-<h2 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h2><h4 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h4><p><strong>栈（stack）</strong>在计算机科学中是限定仅在表尾进行插入或删除操作的<strong>线性表</strong>。栈是一种数据结构，它按照后进<strong>先出（LIFO）</strong>的原则存储数据，先进入的数据被压入栈底，最后的数据在栈顶，需要读数据的时候从栈顶开始弹出数据。栈就是一种类似桶堆积物品的数据结构，进行删除和插入的一端称栈顶，另一端称栈底。插入一般称为<strong>压栈（push）</strong>，删除则称为<strong>弹栈（pop）</strong>。 栈也称为后进先出表。</p>
-<h4 id="特殊之处"><a href="#特殊之处" class="headerlink" title="特殊之处"></a>特殊之处</h4><p>栈的特殊之处体现在元素的添加（push）和删除（pop）</p>
-<h4 id="栈的层次化架构"><a href="#栈的层次化架构" class="headerlink" title="栈的层次化架构"></a>栈的层次化架构</h4><p>通用线性结构：insert, get, remove</p>
-<p>栈结构：push, pop</p>
-<h4 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">SeqStudentListByArray</span>* <span class="title">g_studentListMgr</span>;</span> <span class="comment">//假设顺序表已经完成初始化</span></span><br><span class="line"><span class="function">Boolean <span class="title">push</span><span class="params">(struct Student value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> insert(value , g_studentListMgr-&gt;count+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Boolean <span class="title">pop</span><span class="params">(struct Student&amp; value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">get</span>(g_studentListMgr-&gt;count , value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> FALSE;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove</span>(g_studentListMgr-&gt;count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <p>以下是个人整理的数据结构笔记，目的是对本学期所学的知识进行一个梳理，数据结构是日后很多东西的基础。</p>
+<p>内容来源凯哥的数据结构课以及ppt。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/20/DataStructure2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
