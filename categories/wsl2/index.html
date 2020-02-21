@@ -51,18 +51,16 @@
   };
 </script>
 
-  <meta name="description" content="由于之前安装的next版本是最新的7.5，很多地方比起5.0发生了蛮大的变化，主要是字体变大以及文章内容框变宽导致看得很不习惯，于是自己开始谷歌并修改配置文件。">
-<meta name="keywords" content="博客">
-<meta property="og:type" content="article">
-<meta property="og:title" content="第一次修改博客配置🎈">
-<meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;2019&#x2F;12&#x2F;08&#x2F;modify&#x2F;index.html">
+  <meta name="description" content="web🐶">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guest&#39;s Blog">
+<meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;categories&#x2F;wsl2&#x2F;index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
-<meta property="og:description" content="由于之前安装的next版本是最新的7.5，很多地方比起5.0发生了蛮大的变化，主要是字体变大以及文章内容框变宽导致看得很不习惯，于是自己开始谷歌并修改配置文件。">
+<meta property="og:description" content="web🐶">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-07T19:01:42.516Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guestblog.xyz/2019/12/08/modify/">
+<link rel="canonical" href="https://guestblog.xyz/categories/wsl2/">
 
 
 <script id="page-configurations">
@@ -70,13 +68,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>第一次修改博客配置🎈 | Guest's Blog</title>
+  <title>Category: wsl2 | Guest's Blog</title>
   
 
 
@@ -156,7 +154,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -189,110 +187,50 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/12/08/modify/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/VanGogh.jpg">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          第一次修改博客配置🎈
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h1 class="collection-header">wsl2
+          <small>Category</small>
         </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-08 02:44:03 / Modified: 03:01:42" itemprop="dateCreated datePublished" datetime="2019-12-08T02:44:03+08:00">2019-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-        <p>由于之前安装的next版本是最新的7.5，很多地方比起5.0发生了蛮大的变化，主要是字体变大以及文章内容框变宽导致看得很不习惯，于是自己开始谷歌并修改配置文件。</p>
-<a id="more"></a>
-
-<p>修改的配置文件存放在<code>MyBlog\themes\next\source\css\_schemes\Pisces\_layout.styl</code>中，选择对应的主题文件，我的是<strong>Pisces</strong>。按照网上的文档，原以为只要在结尾处加上如下代码就行了。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.header&#123; <span class="attribute">width</span>: <span class="number">80%</span>; &#125; <span class="comment">/* 80% /</span></span><br><span class="line"><span class="comment">.main-inner &#123; width: 80%; &#125; / 80% */</span></span><br><span class="line"><span class="selector-class">.content-wrap</span> &#123; <span class="attribute">width</span>: calc(<span class="number">100%</span> - <span class="number">260px</span>); &#125;</span><br></pre></td></tr></table></figure>
-
-<p>结果发现实际上文章的区域还是没有改变，仍旧在原来的位置，只好在其本身的width处改成<code>width: 80%;</code></p>
-<p>成功解决。</p>
-<p>字体则是把所有字号都缩小，代码如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Font size</span></span><br><span class="line">$font-size-base           = (hexo-config('font.enable') and hexo-config('font.global.size') is a 'unit') ? unit(hexo-config('font.global.size'), em) : 1em;</span><br><span class="line">$font-size-smallest       = .675em;</span><br><span class="line">$font-size-smaller        = .75em;</span><br><span class="line">$font-size-small          = .8125em;</span><br><span class="line">$font-size-medium         = .875em;</span><br><span class="line">$font-size-large          = 1em;</span><br><span class="line">$font-size-larger         = 1.125em;</span><br><span class="line">$font-size-largest        = 1.25em;</span><br></pre></td></tr></table></figure>
-
-<p>整个博客看起来舒服多了。</p>
-
+    <div class="collection-year">
+      <h1 class="collection-header">2020</h1>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-21T22:15:58+08:00"
+              content="2020-02-21">
+          02-21
+        </time>
+      </div>
 
-        
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/21/wsl2problem/" itemprop="url">
+            <span itemprop="name">wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法</span>
+          </a>
+      </h2>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2019/12/06/DataStructure1/" rel="next" title="关于数据结构的一点浅薄的感悟💡">
-                  <i class="fa fa-chevron-left"></i> 关于数据结构的一点浅薄的感悟💡
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/12/11/academiccommunication/" rel="prev" title="学术交流英语笔记📝">
-                  学术交流英语笔记📝 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+
 
 
           </div>
@@ -343,7 +281,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -387,7 +325,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

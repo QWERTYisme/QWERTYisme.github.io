@@ -51,19 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="东南大学本科生，主要方向是Web。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;about&#x2F;index.html">
+  <meta name="description" content="因为用的是windows insider preview，更新系统比较频繁，最近更新完系统的时候有时候打开wsl2会闪退，在终端打开会报“参考的对象类型不支持尝试的操作”的错误。后来上网找解决办法，成功解决了问题： 在管理员模式的终端下输入命令netsh winsock reset 我觉得很神奇，上网查了很多资料包括wsl2的issue，但是还是没完全弄明白是为什么。netsh是Network S">
+<meta name="keywords" content="wsl2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法">
+<meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;2020&#x2F;02&#x2F;21&#x2F;wsl2problem&#x2F;index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
-<meta property="og:description" content="东南大学本科生，主要方向是Web。">
+<meta property="og:description" content="因为用的是windows insider preview，更新系统比较频繁，最近更新完系统的时候有时候打开wsl2会闪退，在终端打开会报“参考的对象类型不支持尝试的操作”的错误。后来上网找解决办法，成功解决了问题： 在管理员模式的终端下输入命令netsh winsock reset 我觉得很神奇，上网查了很多资料包括wsl2的issue，但是还是没完全弄明白是为什么。netsh是Network S">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;images&#x2F;me.jpg">
-<meta property="og:updated_time" content="2019-11-09T03:57:28.000Z">
+<meta property="og:updated_time" content="2020-02-21T14:26:35.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;images&#x2F;me.jpg">
 
-<link rel="canonical" href="https://guestblog.xyz/about/">
+<link rel="canonical" href="https://guestblog.xyz/2020/02/21/wsl2problem/">
 
 
 <script id="page-configurations">
@@ -71,14 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>About me | Guest's Blog
-  </title>
+  <title>wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法 | Guest's Blog</title>
   
 
 
@@ -187,46 +185,102 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="en">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/02/21/wsl2problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/VanGogh.jpg">
+      <meta itemprop="name" content="Guest">
+      <meta itemprop="description" content="web🐶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guest's Blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">About me
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-<div class="post-meta">
+              <time title="Created: 2020-02-21 22:15:58 / Modified: 22:26:35" itemprop="dateCreated datePublished" datetime="2020-02-21T22:15:58+08:00">2020-02-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/wsl2/" itemprop="url" rel="index">
+                    <span itemprop="name">wsl2</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>因为用的是windows insider preview，更新系统比较频繁，最近更新完系统的时候有时候打开wsl2会闪退，在终端打开会报“参考的对象类型不支持尝试的操作”的错误。后来上网找解决办法，成功解决了问题：</p>
+<p>在管理员模式的终端下输入命令<code>netsh winsock reset</code></p>
+<p>我觉得很神奇，上网查了很多资料包括wsl2的issue，但是还是没完全弄明白是为什么。netsh是<strong>Network Shell</strong>的简称，是一个windows系统本身提供的网络配置命令行工具。winsock是windows下的网络编程接口，这个命令的含义就是重置winsock。</p>
+<p>github上有人说是shadowsocks和wsl2的冲突，但是我有一点还是没想明白，为什么网络接口的冲突会导致无法启动？</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/wsl2/" rel="tag"><i class="fa fa-tag"></i> wsl2</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/20/DataStructure2/" rel="next" title="数据结构随笔📝">
+                  <i class="fa fa-chevron-left"></i> 数据结构随笔📝
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <p>东南大学本科生，主要方向是Web。</p>
-<img src="/images/me.jpg" width = "300" height = "300" alt="me" />
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 

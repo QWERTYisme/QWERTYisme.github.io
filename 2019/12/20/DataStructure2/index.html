@@ -51,15 +51,15 @@
   };
 </script>
 
-  <meta name="description" content="以下是个人整理的数据结构笔记，目的是对本学期所学的知识进行一个梳理，数据结构是日后很多东西的基础。 内容来源凯哥的数据结构课以及ppt。">
+  <meta name="description" content="内容来源凯哥的数据结构课以及ppt。">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构笔记整理📝">
+<meta property="og:title" content="数据结构随笔📝">
 <meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;2019&#x2F;12&#x2F;20&#x2F;DataStructure2&#x2F;index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
-<meta property="og:description" content="以下是个人整理的数据结构笔记，目的是对本学期所学的知识进行一个梳理，数据结构是日后很多东西的基础。 内容来源凯哥的数据结构课以及ppt。">
+<meta property="og:description" content="内容来源凯哥的数据结构课以及ppt。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T12:11:05.044Z">
+<meta property="og:updated_time" content="2020-02-21T14:08:39.898Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://guestblog.xyz/2019/12/20/DataStructure2/">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>数据结构笔记整理📝 | Guest's Blog</title>
+  <title>数据结构随笔📝 | Guest's Blog</title>
   
 
 
@@ -156,7 +156,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据结构笔记整理📝
+          数据结构随笔📝
         </h1>
 
         <div class="post-meta">
@@ -216,10 +216,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-12-20 19:50:19 / Modified: 20:11:05" itemprop="dateCreated datePublished" datetime="2019-12-20T19:50:19+08:00">2019-12-20</time>
+              <time title="Created: 2019-12-20 19:50:19" itemprop="dateCreated datePublished" datetime="2019-12-20T19:50:19+08:00">2019-12-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-21 22:08:39" itemprop="dateModified" datetime="2020-02-21T22:08:39+08:00">2020-02-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -243,8 +249,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>以下是个人整理的数据结构笔记，目的是对本学期所学的知识进行一个梳理，数据结构是日后很多东西的基础。</p>
-<p>内容来源凯哥的数据结构课以及ppt。</p>
+        <p>内容来源凯哥的数据结构课以及ppt。</p>
 <a id="more"></a>
 
 <h2 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h2><h4 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h4><ul>
@@ -340,6 +345,7 @@
 <p>栈结构：push, pop</p>
 <h4 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">SeqStudentListByArray</span>* <span class="title">g_studentListMgr</span>;</span> <span class="comment">//假设顺序表已经完成初始化</span></span><br><span class="line"><span class="function">Boolean <span class="title">push</span><span class="params">(struct Student value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> insert(value , g_studentListMgr-&gt;count+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Boolean <span class="title">pop</span><span class="params">(struct Student&amp; value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">get</span>(g_studentListMgr-&gt;count , value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> FALSE;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove</span>(g_studentListMgr-&gt;count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>由于期末考试的缘故，很多知识比如后面的树和图论在梳理的同时没办法认真的把笔记整理出来了，实在是有点遗憾。</p>
 
     </div>
 
@@ -357,14 +363,17 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/12/11/academiccommunication/" rel="next" title="学术交流英语笔记📝">
-                  <i class="fa fa-chevron-left"></i> 学术交流英语笔记📝
+                <a href="/2019/12/08/modifyblog/" rel="next" title="next主题7.5版本的配置文件修改(调整成5.0的内容框宽度)🎈">
+                  <i class="fa fa-chevron-left"></i> next主题7.5版本的配置文件修改(调整成5.0的内容框宽度)🎈
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/02/21/wsl2problem/" rel="prev" title="wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法">
+                  wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -403,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构导论"><span class="nav-number">1.</span> <span class="nav-text">数据结构导论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据结构的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性结构与非线性结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">线性结构与非线性结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-线性表"><span class="nav-number">2.</span> <span class="nav-text">List 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构特点"><span class="nav-number">2.0.1.</span> <span class="nav-text">结构特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">2.0.2.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连续映射"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">连续映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#离散映射"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">离散映射</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表："><span class="nav-number">2.0.3.</span> <span class="nav-text">线性表：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现在线性表中插入元素："><span class="nav-number">2.0.3.1.</span> <span class="nav-text">实现在线性表中插入元素：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove的实现方法同理："><span class="nav-number">2.0.3.2.</span> <span class="nav-text">remove的实现方法同理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性表总结："><span class="nav-number">2.0.3.3.</span> <span class="nav-text">线性表总结：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表："><span class="nav-number">2.0.4.</span> <span class="nav-text">链表：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack栈"><span class="nav-number">3.</span> <span class="nav-text">Stack栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的定义"><span class="nav-number">3.0.1.</span> <span class="nav-text">栈的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊之处"><span class="nav-number">3.0.2.</span> <span class="nav-text">特殊之处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的层次化架构"><span class="nav-number">3.0.3.</span> <span class="nav-text">栈的层次化架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的实现"><span class="nav-number">3.0.4.</span> <span class="nav-text">栈的实现</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构导论"><span class="nav-number">1.</span> <span class="nav-text">数据结构导论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据结构的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性结构与非线性结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">线性结构与非线性结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-线性表"><span class="nav-number">2.</span> <span class="nav-text">List 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构特点"><span class="nav-number">2.0.1.</span> <span class="nav-text">结构特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">2.0.2.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连续映射"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">连续映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#离散映射"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">离散映射</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表："><span class="nav-number">2.0.3.</span> <span class="nav-text">线性表：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现在线性表中插入元素："><span class="nav-number">2.0.3.1.</span> <span class="nav-text">实现在线性表中插入元素：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove的实现方法同理："><span class="nav-number">2.0.3.2.</span> <span class="nav-text">remove的实现方法同理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性表总结："><span class="nav-number">2.0.3.3.</span> <span class="nav-text">线性表总结：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表："><span class="nav-number">2.0.4.</span> <span class="nav-text">链表：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack栈"><span class="nav-number">3.</span> <span class="nav-text">Stack栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的定义"><span class="nav-number">3.0.1.</span> <span class="nav-text">栈的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊之处"><span class="nav-number">3.0.2.</span> <span class="nav-text">特殊之处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的层次化架构"><span class="nav-number">3.0.3.</span> <span class="nav-text">栈的层次化架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的实现"><span class="nav-number">3.0.4.</span> <span class="nav-text">栈的实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,7 +435,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -470,7 +479,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
