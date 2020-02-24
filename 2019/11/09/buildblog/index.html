@@ -54,12 +54,12 @@
   <meta name="description" content="昨天折腾一晚上总算是把hexo的博客搭出来了，由于同之前的hugo差异很大，在这过程中踩了无数坑。 首先是next的版本，原先在next作者issnan的网站上下载的next是5.1.4版本的，结果运行的过程中控制台一直发提醒，才发现next官方的github上已经是7.0.0版本了，因此又重新下载了一次。 接着是本地调试，本地调试很顺利，几乎没有遇到什么坑。 为了修改自己的配置，打开_confi">
 <meta name="keywords" content="博客,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo博客踩的无数坑🤦‍♂️">
+<meta property="og:title" content="搭建hexo博客、配置next主题踩的无数坑🤦‍♂️">
 <meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;2019&#x2F;11&#x2F;09&#x2F;buildblog&#x2F;index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
 <meta property="og:description" content="昨天折腾一晚上总算是把hexo的博客搭出来了，由于同之前的hugo差异很大，在这过程中踩了无数坑。 首先是next的版本，原先在next作者issnan的网站上下载的next是5.1.4版本的，结果运行的过程中控制台一直发提醒，才发现next官方的github上已经是7.0.0版本了，因此又重新下载了一次。 接着是本地调试，本地调试很顺利，几乎没有遇到什么坑。 为了修改自己的配置，打开_confi">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-07T19:01:10.000Z">
+<meta property="og:updated_time" content="2020-02-24T15:56:51.207Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://guestblog.xyz/2019/11/09/buildblog/">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>搭建hexo博客踩的无数坑🤦‍♂️ | Guest's Blog</title>
+  <title>搭建hexo博客、配置next主题踩的无数坑🤦‍♂️ | Guest's Blog</title>
   
 
 
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建hexo博客踩的无数坑🤦‍♂️
+          搭建hexo博客、配置next主题踩的无数坑🤦‍♂️
         </h1>
 
         <div class="post-meta">
@@ -224,7 +224,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-08 03:01:10" itemprop="dateModified" datetime="2019-12-08T03:01:10+08:00">2019-12-08</time>
+                <time title="Modified: 2020-02-24 23:56:51" itemprop="dateModified" datetime="2020-02-24T23:56:51+08:00">2020-02-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,6 +239,13 @@
             </span>
 
           
+            <span id="/2019/11/09/buildblog/" class="post-meta-item leancloud_visitors" data-flag-title="搭建hexo博客、配置next主题踩的无数坑🤦‍♂️" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -433,6 +440,98 @@
 
 
 
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=i9MvQ07wtd8OJtHUSg32B1ws-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'i9MvQ07wtd8OJtHUSg32B1ws-gzGzoHsz',
+            'X-LC-Key': 'ep4LcH0Slxpvpe89qSCq8dY2',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
 
 
 
