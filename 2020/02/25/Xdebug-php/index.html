@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/Blinky.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/Blinky.png">
@@ -54,18 +54,21 @@
 </script>
 
   <meta name="description" content="昨天在看thinkphp5.0的远程执行代码漏洞，由于里面的类和方法实在是有点多，看别人的博客感觉不够，便想着自己把代码clone下来调试一下。由于以前调试的php基本都是单个的php脚本，var_dump和echo就能解决大多数问题，所以一直没试过单步调试php。这次我决定配置vscode使其可以调试大型的php项目。">
-<meta name="keywords" content="vscode,php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实现vscode+Xdebug调试php🐘">
-<meta property="og:url" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;2020&#x2F;02&#x2F;25&#x2F;Xdebug-php&#x2F;index.html">
+<meta property="og:url" content="https://guestblog.xyz/2020/02/25/Xdebug-php/index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
 <meta property="og:description" content="昨天在看thinkphp5.0的远程执行代码漏洞，由于里面的类和方法实在是有点多，看别人的博客感觉不够，便想着自己把代码clone下来调试一下。由于以前调试的php基本都是单个的php脚本，var_dump和echo就能解决大多数问题，所以一直没试过单步调试php。这次我决定配置vscode使其可以调试大型的php项目。">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;plugin.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;vscode.png">
-<meta property="og:updated_time" content="2020-02-25T15:30:55.310Z">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://guestblog.xyz/Xdebug-php/plugin.png">
+<meta property="og:image" content="https://guestblog.xyz/Xdebug-php/vscode.png">
+<meta property="article:published_time" content="2020-02-25T06:47:43.000Z">
+<meta property="article:modified_time" content="2020-02-25T15:51:02.623Z">
+<meta property="article:author" content="Guest">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;guestblog.xyz&#x2F;plugin.png">
+<meta name="twitter:image" content="https://guestblog.xyz/Xdebug-php/plugin.png">
 
 <link rel="canonical" href="https://guestblog.xyz/2020/02/25/Xdebug-php/">
 
@@ -223,7 +226,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-25 14:47:43 / Modified: 23:30:55" itemprop="dateCreated datePublished" datetime="2020-02-25T14:47:43+08:00">2020-02-25</time>
+              <time title="Created: 2020-02-25 14:47:43 / Modified: 23:51:02" itemprop="dateCreated datePublished" datetime="2020-02-25T14:47:43+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +269,7 @@
 
 <h2 id="php集成开发环境"><a href="#php集成开发环境" class="headerlink" title="php集成开发环境"></a>php集成开发环境</h2><p>首先是php的集成开发环境，我以前用的是<strong>phpStudy</strong>，挺方便，但是因为phpStudy对surface的分辨率适配没做好，每次打开窗口字体都特别小，调到正常大小以后又特别模糊。所以最近换成了<strong>wampserver</strong>。安装好wampserver，打开启动apache服务。</p>
 <h2 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h2><p>vscode需要安装两个插件，PHP Debug和PHP Intelephense。前者用来调试程序，后者提供一些语法补全和代码高亮等功能。</p>
-<p><img src="/plugin.png" alt=""></p>
+<p><img src="/Xdebug-php/plugin.png" alt=""></p>
 <h2 id="Xdebug"><a href="#Xdebug" class="headerlink" title="Xdebug"></a>Xdebug</h2><p>Xdebug是一个php的调试器，在用vscode调试php代码的时候，我们需要用vscode监听Xdebug的某一端口以调试。所以我们需要再安装与配置Xdebug。有一个很方便的方法就是Xdebug官方给出了一个<a href="https://xdebug.org/wizard" target="_blank" rel="noopener">Installation Wizard</a>页面方便用户进行安装。启动wampserver，打开phpinfo页面，把源代码粘贴到输入框中，页面就会生成当前版本匹配的Xdebug的dll版本，以及一个安装配置教程。</p>
 <p>下载下来dll，打开php.ini。新版本的wampserver是集成了Xdebug的，因此在最后我们可以看到[XDebug]的字样，就是Xdebug的配置参数区域，默认也是有一个版本的dll的，但是和官网提供的版本不一样，所以我还是重新配置了一次，这里贴出来我的配置文件。</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[xdebug]</span></span><br><span class="line"><span class="attr">zend_extension</span>=<span class="string">"C:\wamp64\bin\php\php7.3.12\ext\php_xdebug-2.9.2-7.3-vc15-x86_64.dll"</span></span><br><span class="line"><span class="attr">xdebug.remote_enable</span> = <span class="literal">on</span></span><br><span class="line"><span class="attr">xdebug.remote_port</span>= <span class="number">9100</span></span><br><span class="line"><span class="attr">xdebug.remote_autostart</span> = <span class="literal">on</span></span><br><span class="line"><span class="attr">xdebug.profiler_enable</span> = <span class="literal">off</span></span><br><span class="line"><span class="attr">xdebug.profiler_enable_trigger</span> = <span class="literal">Off</span></span><br><span class="line"><span class="attr">xdebug.profiler_output_name</span> = cachegrind.out.%t.%p</span><br><span class="line"><span class="attr">xdebug.profiler_output_dir</span> =<span class="string">"C:/wamp64/tmp"</span></span><br><span class="line"><span class="attr">xdebug.show_local_vars</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
@@ -285,7 +288,7 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Use IntelliSense to learn about possible attributes.</span></span><br><span class="line">    <span class="comment">// Hover to view descriptions of existing attributes.</span></span><br><span class="line">    <span class="comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="attr">"configurations"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"Listen for XDebug"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"php"</span>,</span><br><span class="line">            <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="attr">"port"</span>: <span class="number">9100</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"Launch currently open script"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"php"</span>,</span><br><span class="line">            <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="attr">"program"</span>: <span class="string">"$&#123;file&#125;"</span>,</span><br><span class="line">            <span class="attr">"cwd"</span>: <span class="string">"$&#123;fileDirname&#125;"</span>,</span><br><span class="line">            <span class="attr">"port"</span>: <span class="number">9100</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>port处填自己设置好的Xdebug端口号。然后就可以开始用vscode调试php了！</p>
-<p><img src="/vscode.png" alt=""></p>
+<p><img src="/Xdebug-php/vscode.png" alt=""></p>
 <p>这里安利一下一直在用的这款vscode主题: Github Plus，个人挺喜欢的。</p>
 
     </div>
@@ -424,7 +427,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Guest</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
@@ -551,9 +554,19 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
 
   <script defer src="/lib/three/three.min.js"></script>
 
