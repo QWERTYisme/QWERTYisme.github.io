@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guestblog.xyz/2020/02/25/Xdebug-php/</loc>
+    
+    <lastmod>2020-02-25T15:30:55.310Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guestblog.xyz/2019/12/20/DataStructure2/</loc>
+    
+    <lastmod>2020-02-25T14:22:55.948Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://guestblog.xyz/about/index.html</loc>
     
     <lastmod>2020-02-25T09:12:49.183Z</lastmod>
@@ -9,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://guestblog.xyz/2019/12/08/modifyblog/</loc>
+    <loc>https://guestblog.xyz/2019/12/08/modify-blog/</loc>
     
     <lastmod>2020-02-25T08:34:09.430Z</lastmod>
     
@@ -19,20 +33,6 @@
     <loc>https://guestblog.xyz/2020/02/21/wsl2problem/</loc>
     
     <lastmod>2020-02-25T07:30:20.797Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://guestblog.xyz/2020/02/25/Xdebug-php/</loc>
-    
-    <lastmod>2020-02-25T06:58:11.867Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://guestblog.xyz/2019/12/20/DataStructure2/</loc>
-    
-    <lastmod>2020-02-25T06:50:04.769Z</lastmod>
     
   </url>
   

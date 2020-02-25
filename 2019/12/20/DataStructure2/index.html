@@ -61,7 +61,7 @@
 <meta property="og:site_name" content="Guest&#39;s Blog">
 <meta property="og:description" content="内容来源凯哥的数据结构课以及ppt。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-25T06:50:04.769Z">
+<meta property="og:updated_time" content="2020-02-25T14:22:55.948Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://guestblog.xyz/2019/12/20/DataStructure2/">
@@ -226,7 +226,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 14:50:04" itemprop="dateModified" datetime="2020-02-25T14:50:04+08:00">2020-02-25</time>
+                <time title="Modified: 2020-02-25 22:22:55" itemprop="dateModified" datetime="2020-02-25T22:22:55+08:00">2020-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,24 +261,24 @@
         <p>内容来源凯哥的数据结构课以及ppt。</p>
 <a id="more"></a>
 
-<h2 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h2><h4 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h4><ul>
+<h1 id="数据结构导论"><a href="#数据结构导论" class="headerlink" title="数据结构导论"></a>数据结构导论</h1><h2 id="数据结构的定义"><a href="#数据结构的定义" class="headerlink" title="数据结构的定义"></a>数据结构的定义</h2><ul>
 <li>数据：数据就是数值，也就是我们通过观察、实验或计算得出的结果。数据有很多种，最简单的就是数字。数据也可以是文字、图像、声音等。数据可以用于科学研究、设计、查证等。</li>
 <li>数据结构：数据结构是<strong>计算机存储、组织数据的方式</strong>。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</li>
 <li>数据结构 = 数据 + <strong>关系</strong></li>
 </ul>
-<h4 id="线性结构与非线性结构"><a href="#线性结构与非线性结构" class="headerlink" title="线性结构与非线性结构"></a>线性结构与非线性结构</h4><ul>
+<h2 id="线性结构与非线性结构"><a href="#线性结构与非线性结构" class="headerlink" title="线性结构与非线性结构"></a>线性结构与非线性结构</h2><ul>
 <li>线性结构：线性表、队列、栈、串、数组等。</li>
 <li>非线性结构：树、表、图，以及混合结构。</li>
 <li>线性结构对应：结构更简单，功能更基础，维护更简单。</li>
 <li>非线性结构对应：结构更复杂，功能更强到，维护更困难。</li>
 </ul>
-<h2 id="List-线性表"><a href="#List-线性表" class="headerlink" title="List 线性表"></a>List 线性表</h2><h4 id="结构特点"><a href="#结构特点" class="headerlink" title="结构特点"></a>结构特点</h4><ul>
+<h2 id="List-线性表"><a href="#List-线性表" class="headerlink" title="List 线性表"></a>List 线性表</h2><h3 id="结构特点"><a href="#结构特点" class="headerlink" title="结构特点"></a>结构特点</h3><ul>
 <li><p><strong>全序关系</strong>，每一个元素都具有唯一的前驱和后继</p>
 </li>
 <li><p><strong>严格同构</strong>，任何两个组成部分之间具有相同结构</p>
 </li>
 </ul>
-<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><h5 id="连续映射"><a href="#连续映射" class="headerlink" title="连续映射"></a>连续映射</h5><ul>
+<h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><h4 id="连续映射"><a href="#连续映射" class="headerlink" title="连续映射"></a>连续映射</h4><ul>
 <li><p>连续映射：所有元素依据此许映射为连续而完整的物s理空间，称为<strong>顺序表</strong>。</p>
 </li>
 <li><p>优势：借助物理空间的连续性确保全序关系，管理简单，访问速度快。</p>
@@ -291,7 +291,7 @@
 
 </li>
 </ul>
-<h5 id="离散映射"><a href="#离散映射" class="headerlink" title="离散映射"></a>离散映射</h5><ul>
+<h4 id="离散映射"><a href="#离散映射" class="headerlink" title="离散映射"></a>离散映射</h4><ul>
 <li><p>离散映射：各个元素映射到离散的物理空间并通过结构信息维护全序关系，称为<strong>链表</strong>。</p>
 </li>
 <li><p>优势：不依赖物理空间的连续性，分散存储，充分利用存储空间，具有良好可扩展性。</p>
@@ -299,7 +299,7 @@
 <li><p>劣势：需要额外信息维护结构，逻辑较为复杂，动态分配内存造成额外时间消耗。</p>
 </li>
 </ul>
-<h4 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h4><h5 id="实现在线性表中插入元素："><a href="#实现在线性表中插入元素：" class="headerlink" title="实现在线性表中插入元素："></a>实现在线性表中插入元素：</h5><ul>
+<h3 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h3><h4 id="实现在线性表中插入元素："><a href="#实现在线性表中插入元素：" class="headerlink" title="实现在线性表中插入元素："></a>实现在线性表中插入元素：</h4><ul>
 <li><p>通常的写法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Bool <span class="title">insert</span><span class="params">(struct Student value , <span class="keyword">int</span> index)</span> <span class="comment">//index从1开始</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos;</span><br><span class="line">    <span class="keyword">if</span> (index&gt; g_studentListMgr-&gt;count+<span class="number">1</span> || g_studentListMgr-&gt;count == MAX_List_length) <span class="keyword">return</span> FALSE;</span><br><span class="line">    <span class="keyword">for</span>(pos = g_studentListMgr-&gt;count<span class="number">-1</span>;pos&gt;=index<span class="number">-1</span>;pos--) </span><br><span class="line">    &#123;</span><br><span class="line">        g_studentListMgr.students[pos+<span class="number">1</span>] = g_studentListMgr.students[pos]; </span><br><span class="line">    &#125;</span><br><span class="line">    g_studentListMgr.students[index<span class="number">-1</span>] = value;</span><br><span class="line">    g_studentListMgr-&gt;count+=<span class="number">1</span>；</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -320,13 +320,13 @@
 
 </li>
 </ul>
-<h5 id="remove的实现方法同理："><a href="#remove的实现方法同理：" class="headerlink" title="remove的实现方法同理："></a>remove的实现方法同理：</h5><ul>
+<h4 id="remove的实现方法同理："><a href="#remove的实现方法同理：" class="headerlink" title="remove的实现方法同理："></a>remove的实现方法同理：</h4><ul>
 <li><p>使用memmove函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memmove(g_studentListMgr.students+index<span class="number">-1</span> , g_studentListMgr.students+index , g_studentListMgr-&gt;count - index);</span><br><span class="line">g_studentListMgr.students[count] = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h5 id="线性表总结："><a href="#线性表总结：" class="headerlink" title="线性表总结："></a>线性表总结：</h5><ul>
+<h4 id="线性表总结："><a href="#线性表总结：" class="headerlink" title="线性表总结："></a>线性表总结：</h4><ul>
 <li>存储空间静态分配，难以动态扩充</li>
 <li>数据插入需要进行数据移动，代价O(n)较高</li>
 <li>数据删除需要进行数据移动，代价O(n)较高</li>
@@ -348,11 +348,11 @@
 <li><p>循环链表的应用：CPU进程调度。</p>
 </li>
 </ul>
-<h2 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h2><h4 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h4><p><strong>栈（stack）</strong>在计算机科学中是限定仅在表尾进行插入或删除操作的<strong>线性表</strong>。栈是一种数据结构，它按照后进<strong>先出（LIFO）</strong>的原则存储数据，先进入的数据被压入栈底，最后的数据在栈顶，需要读数据的时候从栈顶开始弹出数据。栈就是一种类似桶堆积物品的数据结构，进行删除和插入的一端称栈顶，另一端称栈底。插入一般称为<strong>压栈（push）</strong>，删除则称为<strong>弹栈（pop）</strong>。 栈也称为后进先出表。</p>
-<h4 id="特殊之处"><a href="#特殊之处" class="headerlink" title="特殊之处"></a>特殊之处</h4><p>栈的特殊之处体现在元素的添加（push）和删除（pop）</p>
-<h4 id="栈的层次化架构"><a href="#栈的层次化架构" class="headerlink" title="栈的层次化架构"></a>栈的层次化架构</h4><p>通用线性结构：insert, get, remove</p>
+<h2 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h2><h3 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h3><p><strong>栈（stack）</strong>在计算机科学中是限定仅在表尾进行插入或删除操作的<strong>线性表</strong>。栈是一种数据结构，它按照后进<strong>先出（LIFO）</strong>的原则存储数据，先进入的数据被压入栈底，最后的数据在栈顶，需要读数据的时候从栈顶开始弹出数据。栈就是一种类似桶堆积物品的数据结构，进行删除和插入的一端称栈顶，另一端称栈底。插入一般称为<strong>压栈（push）</strong>，删除则称为<strong>弹栈（pop）</strong>。 栈也称为后进先出表。</p>
+<h3 id="特殊之处"><a href="#特殊之处" class="headerlink" title="特殊之处"></a>特殊之处</h3><p>栈的特殊之处体现在元素的添加（push）和删除（pop）</p>
+<h3 id="栈的层次化架构"><a href="#栈的层次化架构" class="headerlink" title="栈的层次化架构"></a>栈的层次化架构</h3><p>通用线性结构：insert, get, remove</p>
 <p>栈结构：push, pop</p>
-<h4 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">SeqStudentListByArray</span>* <span class="title">g_studentListMgr</span>;</span> <span class="comment">//假设顺序表已经完成初始化</span></span><br><span class="line"><span class="function">Boolean <span class="title">push</span><span class="params">(struct Student value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> insert(value , g_studentListMgr-&gt;count+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Boolean <span class="title">pop</span><span class="params">(struct Student&amp; value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">get</span>(g_studentListMgr-&gt;count , value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> FALSE;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove</span>(g_studentListMgr-&gt;count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">SeqStudentListByArray</span>* <span class="title">g_studentListMgr</span>;</span> <span class="comment">//假设顺序表已经完成初始化</span></span><br><span class="line"><span class="function">Boolean <span class="title">push</span><span class="params">(struct Student value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> insert(value , g_studentListMgr-&gt;count+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Boolean <span class="title">pop</span><span class="params">(struct Student&amp; value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">get</span>(g_studentListMgr-&gt;count , value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> FALSE;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove</span>(g_studentListMgr-&gt;count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>由于期末考试的缘故，很多知识比如后面的树和图论在梳理的同时没办法认真的把笔记整理出来了，实在是有点遗憾。</p>
 
@@ -372,7 +372,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/12/08/modifyblog/" rel="next" title="Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈">
+                <a href="/2019/12/08/modify-blog/" rel="next" title="Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈">
                   <i class="fa fa-chevron-left"></i> Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈
                 </a>
             </div>
@@ -421,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构导论"><span class="nav-number">1.</span> <span class="nav-text">数据结构导论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据结构的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性结构与非线性结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">线性结构与非线性结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-线性表"><span class="nav-number">2.</span> <span class="nav-text">List 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构特点"><span class="nav-number">2.0.1.</span> <span class="nav-text">结构特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">2.0.2.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连续映射"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">连续映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#离散映射"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">离散映射</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表："><span class="nav-number">2.0.3.</span> <span class="nav-text">线性表：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现在线性表中插入元素："><span class="nav-number">2.0.3.1.</span> <span class="nav-text">实现在线性表中插入元素：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove的实现方法同理："><span class="nav-number">2.0.3.2.</span> <span class="nav-text">remove的实现方法同理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性表总结："><span class="nav-number">2.0.3.3.</span> <span class="nav-text">线性表总结：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表："><span class="nav-number">2.0.4.</span> <span class="nav-text">链表：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack栈"><span class="nav-number">3.</span> <span class="nav-text">Stack栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的定义"><span class="nav-number">3.0.1.</span> <span class="nav-text">栈的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊之处"><span class="nav-number">3.0.2.</span> <span class="nav-text">特殊之处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的层次化架构"><span class="nav-number">3.0.3.</span> <span class="nav-text">栈的层次化架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的实现"><span class="nav-number">3.0.4.</span> <span class="nav-text">栈的实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构导论"><span class="nav-number">1.</span> <span class="nav-text">数据结构导论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构的定义"><span class="nav-number">1.1.</span> <span class="nav-text">数据结构的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性结构与非线性结构"><span class="nav-number">1.2.</span> <span class="nav-text">线性结构与非线性结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-线性表"><span class="nav-number">1.3.</span> <span class="nav-text">List 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构特点"><span class="nav-number">1.3.1.</span> <span class="nav-text">结构特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射"><span class="nav-number">1.3.2.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连续映射"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">连续映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#离散映射"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">离散映射</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表："><span class="nav-number">1.3.3.</span> <span class="nav-text">线性表：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现在线性表中插入元素："><span class="nav-number">1.3.3.1.</span> <span class="nav-text">实现在线性表中插入元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#remove的实现方法同理："><span class="nav-number">1.3.3.2.</span> <span class="nav-text">remove的实现方法同理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表总结："><span class="nav-number">1.3.3.3.</span> <span class="nav-text">线性表总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表："><span class="nav-number">1.3.3.4.</span> <span class="nav-text">链表：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack栈"><span class="nav-number">1.4.</span> <span class="nav-text">Stack栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">栈的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊之处"><span class="nav-number">1.4.2.</span> <span class="nav-text">特殊之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的层次化架构"><span class="nav-number">1.4.3.</span> <span class="nav-text">栈的层次化架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的实现"><span class="nav-number">1.4.4.</span> <span class="nav-text">栈的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.5.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
