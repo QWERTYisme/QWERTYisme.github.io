@@ -2,44 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://guestblog.xyz/2019/11/09/buildblog/</loc>
+    <loc>https://guestblog.xyz/about/index.html</loc>
     
-    <lastmod>2020-02-24T15:56:51.207Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://guestblog.xyz/2020/02/21/wsl2problem/</loc>
-    
-    <lastmod>2020-02-21T14:26:35.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://guestblog.xyz/2019/12/20/DataStructure2/</loc>
-    
-    <lastmod>2020-02-21T14:08:39.898Z</lastmod>
+    <lastmod>2020-02-25T09:01:50.051Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://guestblog.xyz/2019/12/08/modifyblog/</loc>
     
-    <lastmod>2020-02-21T14:05:52.027Z</lastmod>
+    <lastmod>2020-02-25T08:34:09.430Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guestblog.xyz/2020/02/21/wsl2problem/</loc>
+    
+    <lastmod>2020-02-25T07:30:20.797Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guestblog.xyz/2020/02/25/Xdebug-php/</loc>
+    
+    <lastmod>2020-02-25T06:58:11.867Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guestblog.xyz/2019/12/20/DataStructure2/</loc>
+    
+    <lastmod>2020-02-25T06:50:04.769Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://guestblog.xyz/2019/12/06/DataStructure1/</loc>
     
-    <lastmod>2019-12-08T02:16:42.000Z</lastmod>
+    <lastmod>2020-02-25T06:49:57.629Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://guestblog.xyz/about/index.html</loc>
+    <loc>https://guestblog.xyz/2019/11/09/build-blog/</loc>
     
-    <lastmod>2019-11-09T03:57:28.000Z</lastmod>
+    <lastmod>2020-02-24T15:56:51.207Z</lastmod>
     
   </url>
   
