@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /js/
+Disallow: /css/
+
+Sitemap: http://guestblog.xyz/sitemap.xml
+Sitemap: http://guestblog.xyz/baidusitemap.xml
