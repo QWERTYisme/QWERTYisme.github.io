@@ -63,7 +63,7 @@
 <meta property="og:image" content="https://guestblog.xyz/2020/03/21/phpvuln/1.png">
 <meta property="og:image" content="https://guestblog.xyz/2020/03/21/phpvuln/2.png">
 <meta property="article:published_time" content="2020-03-21T02:41:12.000Z">
-<meta property="article:modified_time" content="2020-03-21T09:47:46.953Z">
+<meta property="article:modified_time" content="2020-03-21T09:54:23.188Z">
 <meta property="article:author" content="Guest">
 <meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-21 10:41:12 / Modified: 17:47:46" itemprop="dateCreated datePublished" datetime="2020-03-21T10:41:12+08:00">2020-03-21</time>
+              <time title="Created: 2020-03-21 10:41:12 / Modified: 17:54:23" itemprop="dateCreated datePublished" datetime="2020-03-21T10:41:12+08:00">2020-03-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,7 +270,7 @@
 <p>通过阅读源码我们得知首先需要让SESSION的变量admin的值为真。</p>
 <p>首先是一行php比较运算符：</p>
 <p><code>if (isset($_GET[id]) &amp;&amp; floatval($_GET[id]) !== &#39;1&#39; &amp;&amp; substr($_GET[id], -1) === &#39;9&#39;)</code></p>
-<p>我们需要构造一个GET传参的id，使其浮点类型与’1’不全等，且该变量最后一位是’9’，同时服务器用该sql查询语句进行查询需要返回结果。这里我们可以构造id=1-9。floatval()函数的功能是将一个变量转化为浮点类型，当转换过程中遇到特殊字符便不再继续转换，所以1-9将会被转换为1，而浮点类型和字符类型必然不全等，所以第二个很容易绕过。</p>
+<p>我们需要构造一个GET传参的id，使其浮点类型与&#39;1&#39;不全等，且该变量最后一位是&#39;9&#39;，同时服务器用该sql查询语句进行查询需要返回结果。这里我们可以构造id=1-9。floatval()函数的功能是将一个变量转化为浮点类型，当转换过程中遇到特殊字符便不再继续转换，所以1-9将会被转换为1，而浮点类型和字符类型必然不全等，所以第二个很容易绕过。</p>
 <img src="/2020/03/21/phpvuln/2.png" class="">
 
 <p>这时候问题来到了第二段代码。</p>
@@ -289,9 +289,9 @@
 <p>在明白原因之后我觉得很多师傅的解答简直是误人子弟。这跟linux又有什么关系呢？按照这个说法，123.php的类型很显然是目录，即便是通过..创建了123.php，但是目录类型的文件也是不能被当作php脚本来执行的。我觉得，在这个地方，网上百分之90以上的witeup都是知其然而不知其所以然。</p>
 <p>我把这个题目放到了群里去问SUS的师傅们，最终弄明白了为什么，这里要感谢马师傅，他一下就觉得是php的问题，推给我的文章让我真正弄明白了这个问题。同时也感谢写文章的Dlive师傅，他的钻研精神让我很敬佩。</p>
 <p>很幸运，Dlive师傅遇到的也是同一道题目，他通过调试php源码，得出了问题是出在php的fopen()方法上。这里我对他的结果做一个解释：</p>
-<p>事实上，在参数传入fopen()方法中被调用之前，fopen()首先会调用一个expand_filepath函数，也就是在这个函数之后，原本的’123.php/.’路径转换成了’123.php’，使得php得以正常创建文件。</p>
-<p>在expand_filepath函数中，会调用一个tsrm_realpath_r对路径进行递归标准化，避免路径中存在<code>//</code>以及<code>/./</code>等问题，之后真正送入fopen方法创建文件的路径实际上就是’123.php’。看到这里我恍然大悟。也就是说tsrm_realpath_r这个函数实际上会将任何路径中的<code>../</code>以及<code>/.</code>之类的操作符给消去，得到真正的路径，也就是路径规范化。123.php其实在创建之初就不是一个目录的类型，而是php脚本类型。</p>
-<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>在做这道题目的过程中，我翻遍了许多人的博客，都没有得到满意的答案，但是并没放弃，最后终于明白了为什么。我最大的感受就是，并不一定大家都认可的观点就一定是正确的，对待每一个似是而非的问题都不能轻易地下结论，接受别人的观点，而是要刨根问题，真正弄明白为什么。</p>
+<p>事实上，在参数传入fopen()方法中被调用之前，fopen()首先会调用一个expand_filepath函数，也就是在这个函数之后，原本的&#39;123.php/.&#39;路径转换成了&#39;123.php&#39;，使得php得以正常创建文件。</p>
+<p>在expand_filepath函数中，会调用一个tsrm_realpath_r对路径进行递归标准化，避免路径中存在<code>//</code>以及<code>/./</code>等问题，之后真正送入fopen方法创建文件的路径实际上就是&#39;123.php&#39;。看到这里我恍然大悟。也就是说tsrm_realpath_r这个函数实际上会将任何路径中的<code>../</code>以及<code>/.</code>之类的操作符给消去，得到真正的路径，也就是路径规范化。123.php其实在创建之初就不是一个目录的类型，而是php脚本类型。</p>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>在做这道题目的过程中，我翻遍了许多人的博客，都没有得到满意的答案，但是并没放弃，最后终于明白了为什么。我最大的感受就是，并不一定大家都认可的观点就一定是正确的，对待每一个似是而非的问题都不能轻易地下结论，接受别人的观点，而是要刨根问底，真正弄明白为什么。</p>
 
     </div>
 
