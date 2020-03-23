@@ -53,31 +53,50 @@
   };
 </script>
 
-  <meta name="description" content="web🐶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guest&#39;s Blog">
-<meta property="og:url" content="https://guestblog.xyz/index.html">
+  <meta name="description" content="实验内容已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。 实验目的通过编写内核代码的方式，加深自己对操作系统内核的理解，使其概念变得不那么抽象。同时感受内核中系统调用的运作方式。 设计思路以及流程图新增系统调用打开虚拟机，在桌面发现lin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何编译操作系统内核，并新增系统调用💡">
+<meta property="og:url" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
-<meta property="og:description" content="web🐶">
+<meta property="og:description" content="实验内容已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。 实验目的通过编写内核代码的方式，加深自己对操作系统内核的理解，使其概念变得不那么抽象。同时感受内核中系统调用的运作方式。 设计思路以及流程图新增系统调用打开虚拟机，在桌面发现lin">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/2.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/3.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/4.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/5.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/14.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/6.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/7.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/8.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/9.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/10.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/11.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/12.png">
+<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/13.png">
+<meta property="article:published_time" content="2020-03-23T10:12:17.000Z">
+<meta property="article:modified_time" content="2020-03-23T10:14:07.829Z">
 <meta property="article:author" content="Guest">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
 
-<link rel="canonical" href="https://guestblog.xyz/">
+<link rel="canonical" href="https://guestblog.xyz/2020/03/23/OSC-Experiment/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Guest's Blog</title>
+  <title>如何编译操作系统内核，并新增系统调用💡 | Guest's Blog</title>
   
 
 
@@ -191,10 +210,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/03/23/OSC-Experiment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,8 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/23/OSC-Experiment/" class="post-title-link" itemprop="url">如何编译操作系统内核，并新增系统调用💡</a>
+          如何编译操作系统内核，并新增系统调用💡
         </h1>
 
         <div class="post-meta">
@@ -252,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。</p>
+        <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。</p>
 <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过编写内核代码的方式，加深自己对操作系统内核的理解，使其概念变得不那么抽象。同时感受内核中系统调用的运作方式。</p>
 <h2 id="设计思路以及流程图"><a href="#设计思路以及流程图" class="headerlink" title="设计思路以及流程图"></a>设计思路以及流程图</h2><h3 id="新增系统调用"><a href="#新增系统调用" class="headerlink" title="新增系统调用"></a>新增系统调用</h3><p>打开虚拟机，在桌面发现linux内核压缩文件，首先将其解压：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Desktop</span><br><span class="line">$ tar zxvf linux-2.6.21.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> linux-2.6.21</span><br></pre></td></tr></table></figure>
@@ -353,741 +371,41 @@
 <p>再例如，在内核程序中我们没法通过include&lt;stdio.h&gt;来使用printf函数，取而代之的是printk，这个函数可以将消息打印在内核日志中。</p>
 <h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>Linux内核是一个复杂而精细的东西，在使用修改的过程中必须要十分小心，但这也是Linux内核的魅力所在。有次在编译的过程中，由于没有重新生成内核配置文件就编译，出了很多莫名其妙的错误，到最后才发现。Linux的维护者在编写内核代码时想必也是十分小心的，我想，如果底层api中出现了漏洞，那么黑客就很可能会通过编写恶意的漏洞利用程序来进行攻击。因此，阅读内核代码，可以体会到Linux维护者是如何编写高效而安全的程序的。自己编写系统调用，在确保安全的前提下，可以提升系统中某些功能的运行效率，若想实现某一功能，只需调用我们自己编写的system call，而不用通过用户态函数。这样效率将极大提升。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          
+          <div class="post-tags">
+              <a href="/tags/OS/" rel="tag"><i class="fa fa-tag"></i> OS</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/03/21/phpvuln/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/21/phpvuln/" class="post-title-link" itemprop="url">PHP中为什么fopen()函数能以路径为参数创建文件?🐘</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-03-21 10:41:12" itemprop="dateCreated datePublished" datetime="2020-03-21T10:41:12+08:00">2020-03-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-23 18:14:40" itemprop="dateModified" datetime="2020-03-23T18:14:40+08:00">2020-03-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/03/21/phpvuln/" class="post-meta-item leancloud_visitors" data-flag-title="PHP中为什么fopen()函数能以路径为参数创建文件?🐘" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>之所以写这一篇博客，是因为XCTF攻防世界的一道题目：ics-07。</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>先来看看题目，我的疑惑也是在做题的时候产生的。</p>
-<p>点进去是一个平台管理中心页面，试了下发现只有“项目管理”一栏是可以点的，点进去的页面如下：</p>
-<img src="/2020/03/21/phpvuln/1.png" class="">
-
-<p>乍一看以为是sql注入，但是留意到下面的view-source按钮，点开来看，获得了源代码。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/21/phpvuln/#more" rel="contents">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/03/21/phpvuln/" rel="next" title="PHP中为什么fopen()函数能以路径为参数创建文件?🐘">
+                  <i class="fa fa-chevron-left"></i> PHP中为什么fopen()函数能以路径为参数创建文件?🐘
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+            <span class="post-nav-divider"></span>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/02/25/Xdebug-php/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/25/Xdebug-php/" class="post-title-link" itemprop="url">实现vscode+Xdebug调试php🐘</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-25 14:47:43" itemprop="dateCreated datePublished" datetime="2020-02-25T14:47:43+08:00">2020-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-23 18:08:15" itemprop="dateModified" datetime="2020-03-23T18:08:15+08:00">2020-03-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vscode/" itemprop="url" rel="index">
-                    <span itemprop="name">vscode</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vscode/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/02/25/Xdebug-php/" class="post-meta-item leancloud_visitors" data-flag-title="实现vscode+Xdebug调试php🐘" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>昨天在看thinkphp5.0的远程执行代码漏洞，由于里面的类和方法实在是有点多，看别人的博客感觉不够，便想着自己把代码clone下来调试一下。由于以前调试的php基本都是单个的php脚本，<code>var_dump</code>和<code>echo</code>就能解决大多数问题，所以一直没试过单步调试php。这次我决定配置vscode使其可以调试大型的php项目。</p>
-<h2 id="php集成开发环境"><a href="#php集成开发环境" class="headerlink" title="php集成开发环境"></a>php集成开发环境</h2><p>首先是php的集成开发环境，我以前用的是<strong>phpStudy</strong>，挺方便，但是因为phpStudy对surface的分辨率适配没做好，每次打开窗口字体都特别小，调到正常大小以后又特别模糊。所以最近换成了<strong>wampserver</strong>。安装好wampserver，打开启动apache服务。</p>
-<h2 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h2><p>vscode需要安装两个插件，PHP Debug和PHP Intelephense。前者用来调试程序，后者提供一些语法补全和代码高亮等功能。</p>
-<img src="/2020/02/25/Xdebug-php/plugin.png" class="">
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/25/Xdebug-php/#more" rel="contents">
-                Read more &raquo;
-              </a>
+            <div class="post-nav-prev post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/02/21/wsl2problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/21/wsl2problem/" class="post-title-link" itemprop="url">wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-21 22:15:58" itemprop="dateCreated datePublished" datetime="2020-02-21T22:15:58+08:00">2020-02-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 15:30:20" itemprop="dateModified" datetime="2020-02-25T15:30:20+08:00">2020-02-25</time>
-              </span>
-
-          
-            <span id="/2020/02/21/wsl2problem/" class="post-meta-item leancloud_visitors" data-flag-title="wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>因为用的是windows insider preview，更新系统比较频繁，最近更新完系统的时候有时候打开wsl2会闪退，在终端打开会报“参考的对象类型不支持尝试的操作”的错误。后来上网找解决办法，成功解决了问题：</p>
-<p>在管理员模式的终端下输入命令<code>netsh winsock reset</code></p>
-<p>我觉得很神奇，上网查了很多资料包括wsl2的issue，但是还是没完全弄明白是为什么。netsh是<strong>Network Shell</strong>的简称，是一个windows系统本身提供的网络配置命令行工具。winsock是windows下的网络编程接口，这个命令的含义就是重置winsock。</p>
-<p>github上有人说是shadowsocks和wsl2的冲突，但是我有一点还是没想明白，为什么网络接口的冲突会导致无法启动？</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/12/20/DataStructure2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/20/DataStructure2/" class="post-title-link" itemprop="url">数据结构随笔2📝</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-12-20 19:50:19" itemprop="dateCreated datePublished" datetime="2019-12-20T19:50:19+08:00">2019-12-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 22:22:55" itemprop="dateModified" datetime="2020-02-25T22:22:55+08:00">2020-02-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/12/20/DataStructure2/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构随笔2📝" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>内容来源凯哥的数据结构课以及ppt。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/20/DataStructure2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/12/08/modify-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/08/modify-blog/" class="post-title-link" itemprop="url">Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-12-08 02:44:03" itemprop="dateCreated datePublished" datetime="2019-12-08T02:44:03+08:00">2019-12-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 16:34:09" itemprop="dateModified" datetime="2020-02-25T16:34:09+08:00">2020-02-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/12/08/modify-blog/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>由于之前安装的next版本是最新的7.5，很多地方比起5.0发生了蛮大的变化，主要是字体变大以及文章内容框变宽导致看得很不习惯，于是自己开始谷歌并修改配置文件。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/08/modify-blog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/12/06/DataStructure1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/06/DataStructure1/" class="post-title-link" itemprop="url">数据结构随笔💡</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-12-06 09:24:57" itemprop="dateCreated datePublished" datetime="2019-12-06T09:24:57+08:00">2019-12-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 14:49:57" itemprop="dateModified" datetime="2020-02-25T14:49:57+08:00">2020-02-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/12/06/DataStructure1/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构随笔💡" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>数据结构课也算是一学期快要上完了，尽管凯哥吹了一学期的牛，似乎并没有讲什么数据结构方面具体的知识，但我感觉一学期下来收获良多。可能是因为凯哥讲课比较注重方法论，许多具体的点，尽管不细讲，但他会跟我们讲明白原理，讲一些计算机的底层的架构，我觉得这些对我思想方面的提升是巨大的。我觉得数据结构这门课在凯哥的引导以及自学下慢慢领悟到了一些思想了。有的时候看凯哥其实更像一个计组老师，我很感激他。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/06/DataStructure1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/11/09/build-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/build-blog/" class="post-title-link" itemprop="url">搭建hexo博客、配置next主题踩的无数坑🤦‍♂️</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-09 12:05:17" itemprop="dateCreated datePublished" datetime="2019-11-09T12:05:17+08:00">2019-11-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-24 23:56:51" itemprop="dateModified" datetime="2020-02-24T23:56:51+08:00">2020-02-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/09/build-blog/" class="post-meta-item leancloud_visitors" data-flag-title="搭建hexo博客、配置next主题踩的无数坑🤦‍♂️" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>昨天折腾一晚上总算是把hexo的博客搭出来了，由于同之前的hugo差异很大，在这过程中踩了无数坑。</p>
-<p>首先是next的版本，原先在next作者issnan的网站上下载的next是5.1.4版本的，结果运行的过程中控制台一直发提醒，才发现next官方的github上已经是7.0.0版本了，因此又重新下载了一次。</p>
-<p>接着是本地调试，本地调试很顺利，几乎没有遇到什么坑。</p>
-<p>为了修改自己的配置，打开_config.yml开始改参数。</p>
-<h5 id="顺着文档一条一条来，不懂的看别人博客、看注释。"><a href="#顺着文档一条一条来，不懂的看别人博客、看注释。" class="headerlink" title="顺着文档一条一条来，不懂的看别人博客、看注释。"></a>顺着文档一条一条来，不懂的看别人博客、看注释。</h5>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/09/build-blog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2019/11/07/welcome/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rick2.png">
-      <meta itemprop="name" content="Guest">
-      <meta itemprop="description" content="web🐶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guest's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/07/welcome/" class="post-title-link" itemprop="url">Welcome to my blog! 😜</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-07 21:41:10" itemprop="dateCreated datePublished" datetime="2019-11-07T21:41:10+08:00">2019-11-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-08 20:16:30" itemprop="dateModified" datetime="2019-11-08T20:16:30+08:00">2019-11-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/07/welcome/" class="post-meta-item leancloud_visitors" data-flag-title="Welcome to my blog! 😜" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎来到我的博客 : )</p>
-<p>原来的博客由于github账号修改username而挂了，原先的博客是用的hugo生成的。本来想迁移过来的，后来发现hexo上的next主题很是讨喜，于是又重新搭了这个博客。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -1116,6 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容"><span class="nav-number">1.</span> <span class="nav-text">实验内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验目的"><span class="nav-number">2.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计思路以及流程图"><span class="nav-number">3.</span> <span class="nav-text">设计思路以及流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增系统调用"><span class="nav-number">3.1.</span> <span class="nav-text">新增系统调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新编译内核"><span class="nav-number">3.2.</span> <span class="nav-text">重新编译内核</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源程序以及注释"><span class="nav-number">4.</span> <span class="nav-text">源程序以及注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行结果"><span class="nav-number">5.</span> <span class="nav-text">程序运行结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验体会"><span class="nav-number">6.</span> <span class="nav-text">实验体会</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于内核"><span class="nav-number">6.1.</span> <span class="nav-text">关于内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核态和用户态"><span class="nav-number">6.2.</span> <span class="nav-text">内核态和用户态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">6.3.</span> <span class="nav-text">写在最后</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
