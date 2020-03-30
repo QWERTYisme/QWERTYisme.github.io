@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://guestblog.xyz/"/>
+  <link href="https://www.guestblog.xyz/"/>
   <updated>2020-03-23T10:21:34.948Z</updated>
-  <id>https://guestblog.xyz/</id>
+  <id>https://www.guestblog.xyz/</id>
   
   <author>
     <name>Guest</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>如何编译操作系统内核，并新增系统调用💡</title>
-    <link href="https://guestblog.xyz/2020/03/23/OSC-Experiment/"/>
-    <id>https://guestblog.xyz/2020/03/23/OSC-Experiment/</id>
+    <link href="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/"/>
+    <id>https://www.guestblog.xyz/2020/03/23/OSC-Experiment/</id>
     <published>2020-03-23T10:12:17.000Z</published>
     <updated>2020-03-23T10:21:34.948Z</updated>
     
@@ -40,19 +40,19 @@
     </summary>
     
     
-      <category term="OS" scheme="https://guestblog.xyz/categories/OS/"/>
+      <category term="OS" scheme="https://www.guestblog.xyz/categories/OS/"/>
     
     
-      <category term="OS" scheme="https://guestblog.xyz/tags/OS/"/>
+      <category term="OS" scheme="https://www.guestblog.xyz/tags/OS/"/>
     
-      <category term="Linux" scheme="https://guestblog.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.guestblog.xyz/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>PHP中为什么fopen()函数能以路径为参数创建文件?🐘</title>
-    <link href="https://guestblog.xyz/2020/03/21/phpvuln/"/>
-    <id>https://guestblog.xyz/2020/03/21/phpvuln/</id>
+    <link href="https://www.guestblog.xyz/2020/03/21/phpvuln/"/>
+    <id>https://www.guestblog.xyz/2020/03/21/phpvuln/</id>
     <published>2020-03-21T02:41:12.000Z</published>
     <updated>2020-03-23T10:14:40.880Z</updated>
     
@@ -70,17 +70,17 @@
     </summary>
     
     
-      <category term="php" scheme="https://guestblog.xyz/categories/php/"/>
+      <category term="php" scheme="https://www.guestblog.xyz/categories/php/"/>
     
     
-      <category term="php" scheme="https://guestblog.xyz/tags/php/"/>
+      <category term="php" scheme="https://www.guestblog.xyz/tags/php/"/>
     
   </entry>
   
   <entry>
     <title>实现vscode+Xdebug调试php🐘</title>
-    <link href="https://guestblog.xyz/2020/02/25/Xdebug-php/"/>
-    <id>https://guestblog.xyz/2020/02/25/Xdebug-php/</id>
+    <link href="https://www.guestblog.xyz/2020/02/25/Xdebug-php/"/>
+    <id>https://www.guestblog.xyz/2020/02/25/Xdebug-php/</id>
     <published>2020-02-25T06:47:43.000Z</published>
     <updated>2020-03-24T02:54:05.477Z</updated>
     
@@ -96,19 +96,19 @@
     </summary>
     
     
-      <category term="php" scheme="https://guestblog.xyz/categories/php/"/>
+      <category term="php" scheme="https://www.guestblog.xyz/categories/php/"/>
     
     
-      <category term="vscode" scheme="https://guestblog.xyz/tags/vscode/"/>
+      <category term="vscode" scheme="https://www.guestblog.xyz/tags/vscode/"/>
     
-      <category term="php" scheme="https://guestblog.xyz/tags/php/"/>
+      <category term="php" scheme="https://www.guestblog.xyz/tags/php/"/>
     
   </entry>
   
   <entry>
     <title>wsl2闪退及出现“参考的对象类型不支持尝试的操作”的解决方法</title>
-    <link href="https://guestblog.xyz/2020/02/21/wsl2problem/"/>
-    <id>https://guestblog.xyz/2020/02/21/wsl2problem/</id>
+    <link href="https://www.guestblog.xyz/2020/02/21/wsl2problem/"/>
+    <id>https://www.guestblog.xyz/2020/02/21/wsl2problem/</id>
     <published>2020-02-21T14:15:58.000Z</published>
     <updated>2020-02-25T07:30:20.797Z</updated>
     
@@ -126,14 +126,14 @@
     
     
     
-      <category term="wsl2" scheme="https://guestblog.xyz/tags/wsl2/"/>
+      <category term="wsl2" scheme="https://www.guestblog.xyz/tags/wsl2/"/>
     
   </entry>
   
   <entry>
     <title>数据结构随笔2📝</title>
-    <link href="https://guestblog.xyz/2019/12/20/DataStructure2/"/>
-    <id>https://guestblog.xyz/2019/12/20/DataStructure2/</id>
+    <link href="https://www.guestblog.xyz/2019/12/20/DataStructure2/"/>
+    <id>https://www.guestblog.xyz/2019/12/20/DataStructure2/</id>
     <published>2019-12-20T11:50:19.000Z</published>
     <updated>2020-02-25T14:22:55.948Z</updated>
     
@@ -146,17 +146,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="https://guestblog.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.guestblog.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://guestblog.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.guestblog.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>Hexo-next主题V7.5的配置文件修改(调整成V5.0的内容框宽度)🎈</title>
-    <link href="https://guestblog.xyz/2019/12/08/modify-blog/"/>
-    <id>https://guestblog.xyz/2019/12/08/modify-blog/</id>
+    <link href="https://www.guestblog.xyz/2019/12/08/modify-blog/"/>
+    <id>https://www.guestblog.xyz/2019/12/08/modify-blog/</id>
     <published>2019-12-07T18:44:03.000Z</published>
     <updated>2020-02-25T08:34:09.430Z</updated>
     
@@ -169,17 +169,17 @@
     </summary>
     
     
-      <category term="博客" scheme="https://guestblog.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://www.guestblog.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="博客" scheme="https://guestblog.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://www.guestblog.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>数据结构随笔💡</title>
-    <link href="https://guestblog.xyz/2019/12/06/DataStructure1/"/>
-    <id>https://guestblog.xyz/2019/12/06/DataStructure1/</id>
+    <link href="https://www.guestblog.xyz/2019/12/06/DataStructure1/"/>
+    <id>https://www.guestblog.xyz/2019/12/06/DataStructure1/</id>
     <published>2019-12-06T01:24:57.000Z</published>
     <updated>2020-02-25T06:49:57.629Z</updated>
     
@@ -192,17 +192,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="https://guestblog.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.guestblog.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://guestblog.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.guestblog.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>搭建hexo博客、配置next主题踩的无数坑🤦‍♂️</title>
-    <link href="https://guestblog.xyz/2019/11/09/build-blog/"/>
-    <id>https://guestblog.xyz/2019/11/09/build-blog/</id>
+    <link href="https://www.guestblog.xyz/2019/11/09/build-blog/"/>
+    <id>https://www.guestblog.xyz/2019/11/09/build-blog/</id>
     <published>2019-11-09T04:05:17.000Z</published>
     <updated>2020-02-24T15:56:51.207Z</updated>
     
@@ -219,19 +219,19 @@
     </summary>
     
     
-      <category term="博客" scheme="https://guestblog.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://www.guestblog.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="博客" scheme="https://guestblog.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://www.guestblog.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="github" scheme="https://guestblog.xyz/tags/github/"/>
+      <category term="github" scheme="https://www.guestblog.xyz/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Welcome to my blog! 😜</title>
-    <link href="https://guestblog.xyz/2019/11/07/welcome/"/>
-    <id>https://guestblog.xyz/2019/11/07/welcome/</id>
+    <link href="https://www.guestblog.xyz/2019/11/07/welcome/"/>
+    <id>https://www.guestblog.xyz/2019/11/07/welcome/</id>
     <published>2019-11-07T13:41:10.000Z</published>
     <updated>2019-11-08T12:16:30.000Z</updated>
     
@@ -249,10 +249,10 @@
     </summary>
     
     
-      <category term="随笔" scheme="https://guestblog.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://www.guestblog.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="life" scheme="https://guestblog.xyz/tags/life/"/>
+      <category term="life" scheme="https://www.guestblog.xyz/tags/life/"/>
     
   </entry>
   

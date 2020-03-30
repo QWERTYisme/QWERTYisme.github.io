@@ -56,33 +56,33 @@
   <meta name="description" content="实验内容已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。 实验目的通过编写内核代码的方式，加深自己对操作系统内核的理解，使其概念变得不那么抽象。同时感受内核中系统调用的运作方式。 设计思路以及流程图新增系统调用打开虚拟机，在桌面发现lin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何编译操作系统内核，并新增系统调用💡">
-<meta property="og:url" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/index.html">
+<meta property="og:url" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/index.html">
 <meta property="og:site_name" content="Guest&#39;s Blog">
 <meta property="og:description" content="实验内容已经获得了linux内核源代码。通过修改源代码，创建一个新的编号为320的系统调用，具体功能由自己指定。接着生成内核配置文件，并编译安装内核。最终使得开机时能够选择启动自己编译的内核，并成功调用新增的系统调用。 实验目的通过编写内核代码的方式，加深自己对操作系统内核的理解，使其概念变得不那么抽象。同时感受内核中系统调用的运作方式。 设计思路以及流程图新增系统调用打开虚拟机，在桌面发现lin">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/2.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/3.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/4.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/5.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/14.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/6.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/7.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/8.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/9.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/10.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/11.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/12.png">
-<meta property="og:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/13.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/2.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/3.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/4.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/5.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/14.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/6.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/7.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/8.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/9.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/10.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/11.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/12.png">
+<meta property="og:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/13.png">
 <meta property="article:published_time" content="2020-03-23T10:12:17.000Z">
 <meta property="article:modified_time" content="2020-03-23T10:21:34.948Z">
 <meta property="article:author" content="Guest">
 <meta property="article:tag" content="OS">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
+<meta name="twitter:image" content="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/1.png">
 
-<link rel="canonical" href="https://guestblog.xyz/2020/03/23/OSC-Experiment/">
+<link rel="canonical" href="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/">
 
 
 <script id="page-configurations">
@@ -214,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://guestblog.xyz/2020/03/23/OSC-Experiment/">
+    <link itemprop="mainEntityOfPage" href="https://www.guestblog.xyz/2020/03/23/OSC-Experiment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/rick2.png">
